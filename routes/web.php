@@ -2,6 +2,11 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\WelcomeController;
+
+
+Route::get('/', [WelcomeController::class, 'index']);
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,6 +18,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function() {
+//
+// return view('welcome', [
+//
+// 'title' => 'Hello World!!',
+//
+// 'content' => 'Lorem ipusm...'
+//
+// ]);
+//
+// });
