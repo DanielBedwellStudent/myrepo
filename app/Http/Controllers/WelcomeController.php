@@ -16,17 +16,10 @@ class WelcomeController extends Controller
 
   {
 
-  $visitors = Visitor::all();
-
-
-  return view('welcome', [
-
-  'title' => 'Our visitors',
-
-  'visitors' => $visitors
-
-  ]);
+  return view('welcome');
 
   }
+
+
 
 }
