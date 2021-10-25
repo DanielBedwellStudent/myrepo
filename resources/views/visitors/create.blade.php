@@ -14,7 +14,7 @@
 
 
 
-<div class=" my-10">
+<!-- <div class=" my-10">
 
 <label for="name">Name:</label>
 
@@ -28,7 +28,7 @@
 
 @enderror
 
-</div>
+</div> -->
 
 
 
