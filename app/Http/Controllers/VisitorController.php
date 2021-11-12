@@ -49,6 +49,7 @@ class VisitorController extends Controller
      */
      public function store(Request $request)
    {
+
        $request->validate([
            'comments' => 'required'
        ]);
@@ -60,7 +61,8 @@ class VisitorController extends Controller
 
        return redirect()->route('visitors.index')
            ->with('success','Signing created successfully.');
-   }
+
+ }
 
 
 
@@ -104,8 +106,14 @@ class VisitorController extends Controller
      * @param  \App\Models\Visitor  $visitor
      * @return \Illuminate\Http\Response
      */
+
+
      public function update(Request $request, Visitor $visitor)
      {
+       if(Auth::user()->id != $visitor->user_id) {
+         return response()->json(["message", "Authentication Required!"], 401);
+       }
+
          $request->validate([
              'comments' => 'required'
          ]);
@@ -115,6 +123,8 @@ class VisitorController extends Controller
 
          return redirect()->route('visitors.index')
              ->with('success', 'Signing updated successfully');
+
+
      }
 
 
